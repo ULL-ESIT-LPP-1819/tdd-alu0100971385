@@ -13,27 +13,27 @@ RSpec.describe Nutrientes do
       end
         
 			it "Debe existir la cantidad de grasas" do
-      	expect(@nutrientes.grasas).to eq(12)
+      	expect(@nutrientes.grasas).to equal(12)
   		end
       		
       it "Debe existir la cantidad de grasas saturadas" do
-      	expect(@nutrientes.grasas_saturadas).to eq(4)
+      	expect(@nutrientes.grasas_saturadas).to equal(4)
       end
       	    
       it "Debe existir la cantidad de hidratos de carbono" do
-      	expect(@nutrientes.hidratos_carbono).to eq(8)
+      	expect(@nutrientes.hidratos_carbono).to equal(8)
       end
       	
       it "Debe existir la cantidad de azúcares" do
-      	expect(@nutrientes.azucares).to eq(7)
+      	expect(@nutrientes.azucares).to equal(7)
       end
       	    
 	    it "Debe existir la cantidad de proteínas" do
-			  expect(@nutrientes.proteinas).to eq(6)
+			  expect(@nutrientes.proteinas).to equal(6)
 	    end
 	    
 	    it "Debe existir la cantidad de sal" do
-			  expect(@nutrientes.sal).to eq(15)
+			  expect(@nutrientes.sal).to equal(15)
 	    end
       	
   end
@@ -44,31 +44,31 @@ RSpec.describe Nutrientes do
 	    end
 			    
 			it "Método para obtener el valor energético" do
-				expect(@nutrientes.writekcal).to eq(1200)
+				expect(@nutrientes.writekcal).to equal(1200)
 			end
 			
 			it "Método para obtener la cantidad de grasas" do
-				expect(@nutrientes.writegrasas).to eq(12)
+				expect(@nutrientes.writegrasas).to equal(12)
 			end
 			
 			it "Método para obtener la cantidad de grasas saturadas" do
-				expect(@nutrientes.writegrasassaturadas).to eq(4)
+				expect(@nutrientes.writegrasassaturadas).to equal(4)
 			end
 			
 			it "Método para obtener la cantidad de hidratos de carbono" do
-				expect(@nutrientes.writehidratosdecarbono).to eq(8)
+				expect(@nutrientes.writehidratosdecarbono).to equal(8)
 			end
 			
 			it "Método para obtener la cantidad de azúcares" do
-				expect(@nutrientes.writeazucares).to eq(7)
+				expect(@nutrientes.writeazucares).to equal(7)
 			end
 			
 			it "Método para obtener la cantidad de proteínas" do
-				expect(@nutrientes.writeproteinas).to eq(6)
+				expect(@nutrientes.writeproteinas).to equal(6)
 			end
 			
 			it "Método para obtener la cantidad de sal" do
-				expect(@nutrientes.writesal).to eq(15)
+				expect(@nutrientes.writesal).to equal(15)
 			end
 			
 		end
