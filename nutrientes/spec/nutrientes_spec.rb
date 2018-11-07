@@ -8,32 +8,32 @@ RSpec.describe Nutrientes do
     end
     
     describe "#Pruebas para comprobar la existencia de los datos: " do
-			it "Debe existir un nombre para la etiqueta" do
-        expect(@nutrientes.nombre).to eq("Hamburguesa")
-      end
+		it "Debe existir un nombre para la etiqueta" do
+        	expect(@nutrientes.nombre).to eq("Hamburguesa")
+		end
         
-			it "Debe existir la cantidad de grasas" do
-      	expect(@nutrientes.grasas).to equal(12)
+		it "Debe existir la cantidad de grasas" do
+      		expect(@nutrientes.grasas).to equal(12)
   		end
       		
-      it "Debe existir la cantidad de grasas saturadas" do
-      	expect(@nutrientes.grasas_saturadas).to equal(4)
-      end
-      	    
-      it "Debe existir la cantidad de hidratos de carbono" do
-      	expect(@nutrientes.hidratos_carbono).to equal(8)
-      end
-      	
-      it "Debe existir la cantidad de azúcares" do
-      	expect(@nutrientes.azucares).to equal(7)
-      end
+		it "Debe existir la cantidad de grasas saturadas" do
+			expect(@nutrientes.grasas_saturadas).to equal(4)
+		end
+		  
+		it "Debe existir la cantidad de hidratos de carbono" do
+			expect(@nutrientes.hidratos_carbono).to equal(8)
+		end
+		  
+		it "Debe existir la cantidad de azúcares" do
+			expect(@nutrientes.azucares).to equal(7)
+		end
       	    
 	    it "Debe existir la cantidad de proteínas" do
-			  expect(@nutrientes.proteinas).to equal(6)
+			expect(@nutrientes.proteinas).to equal(6)
 	    end
 	    
 	    it "Debe existir la cantidad de sal" do
-			  expect(@nutrientes.sal).to equal(15)
+			expect(@nutrientes.sal).to equal(15)
 	    end
       	
   end
@@ -41,7 +41,7 @@ RSpec.describe Nutrientes do
   describe "#Test para comprobar los métodos" do
 			it "Método para obtener el nombre" do
 				expect(@nutrientes.write).to eq("Hamburguesa")
-	    end
+	    	end
 			    
 			it "Método para obtener el valor energético" do
 				expect(@nutrientes.writekcal).to equal(1200)
