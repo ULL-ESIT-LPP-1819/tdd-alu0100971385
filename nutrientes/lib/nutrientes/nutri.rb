@@ -1,61 +1,70 @@
 class Nutri
     
-    attr_accessor :nombre,:calorias, :grasas, :grasas_saturadas, :hidratos_carbono, :azucares, :proteinas, :sal, :porciones, :gramos
+    attr_accessor :nombre,:calorias, :grasas, :grasa_saturada, :hidratos_carbono, :azucares, :proteina, :sal, :monoinsaturadas, :poliinsaturadas, :polialcoholes, :almidon, :fibra, :vitaminas, :porciones, :gramos
     
-    def initialize(nombre,calorias,grasas,grasas_saturadas,hidratos_carbono,azucares,proteinas,sal,porciones,gramos)
+   def initialize(nombre,calorias,grasas,grasa_saturada,hidratos_carbono,azucares,proteina,sal,monoinsaturadas,poliinsaturadas,polialcoholes,almidon,fibra,vitaminas,porciones,gramos)
        self.nombre = nombre
        self.calorias = calorias
        self.grasas = grasas
-       self.grasas_saturadas = grasas_saturadas
+       self.grasa_saturada = grasa_saturada
        self.hidratos_carbono = hidratos_carbono
        self.azucares = azucares
-       self.proteinas = proteinas
+       self.proteina = proteina
        self.sal = sal
+       self.monoinsaturadas = monoinsaturadas
+       self.poliinsaturadas = poliinsaturadas
+       self.polialcoholes = polialcoholes
+       self.almidon = almidon
+       self.fibra = fibra
+       self.vitaminas = vitaminas
        self.porciones = porciones
        self.gramos = gramos
     end
     
-    def calculatej
-       (37*grasas + 37*grasas_saturadas + 17*hidratos_carbono + 17*azucares + 17*proteinas + 25*sal)*porciones*gramos
+    def calculate_Julios
+       (37*grasas + 37*grasa_saturada + 17*hidratos_carbono + 17*azucares + 17*proteina + 25*sal)*porciones*gramos
     end
     
-    def calculatekcal
-       (9*grasas + 9*grasas_saturadas + 4*hidratos_carbono + 4*azucares + 4*proteinas + 6*sal)*porciones*gramos
+    def calculate_Kcal
+       (9*grasas + 9*grasa_saturada + 4*hidratos_carbono + 4*azucares + 4*proteina + 6*sal)*porciones*gramos
     end
     
-    def indicereferencia
-       put "8400 kJ/ 2000 kcal, 70g Grasas, 20g Ácidos grasos saturados, 260g Hidratos de Carbono, 90g Azucares, 50g Proteínas, 6g Sal" 
+    def IR
+       put "8400 kJ/ 2000 kcal, 70g Grasas, 20g Ácidos grasos Saturados, 260g Hidratos de Carbono, 90g Azucares, 50g Proteínas, 6g Sal" 
     end
     
     def write
         return @nombre
     end
     
-    def writekcal
+    def writeCalorias
        return @calorias
     end
     
-    def writegrasas
+    def writeGrasas
         return @grasas
     end
     
-    def writegrasassaturadas
-        return @grasas_saturadas
+    def writeGrasasSaturadas
+        return @grasa_saturada
     end
     
-    def writehidratosdecarbono
+    def writeHidratosCarbono
         return @hidratos_carbono
     end
     
-    def writeazucares
+    def writeAzucares
        return @azucares
     end
     
-    def writeproteinas
-       return @proteinas
+    def writeProteinas
+       return @proteina
     end
     
     def writesal
         return @sal
-    end
+    end 
+    
+ 
+    
 end
