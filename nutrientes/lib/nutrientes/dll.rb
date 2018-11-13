@@ -1,0 +1,80 @@
+Node = Struct.new(:value, :next_, :prev)
+
+class DLL
+    
+    attr_accessor :head, :tail
+    
+    def initialize(val)
+       @head = Node.new(val,nil,nil)
+       @tail = @head
+    end
+    
+    def insert_tail(val)
+       aux = Node.new(val,nil,@tail)
+       @tail.next_ = aux
+       @tail = aux
+    end
+    
+    def insert_head(val)
+       aux = Node.new(val,@head,nil)
+       @head.prev = aux
+       @head = aux
+    end
+    
+    def extract_head
+       aux = @head.value
+       @head = @head.next_
+       @head.prev = nil
+       return aux
+    end
+    
+    def extract_tail
+       aux = @tail.value
+       @tail = @tail.prev
+       @tail.next_ = nil
+       return aux
+    end
+    
+    def get_head
+        return @head.value
+    end
+    
+    def get_tail
+        return @tail.value
+    end
+    
+    def to_s
+        string = "("
+        aux = @head
+        while (aux != nil) do
+            string += "#{aux.value.writesal} gr"
+            if(aux.next_ != nil)
+                string += ", "
+            end
+            aux = aux.next_
+        end
+        string += ")"
+        return string
+    end
+    
+    def clasificacion
+        aux = @head
+        aux2 = ""
+        cart = Array.new
+        while (aux != nil) do
+            if (aux.value.writesal <= 4)
+                aux2 = "Bajo en Sal"
+            end
+            if (aux.value.writesal > 4 && aux.value.writesal <= 20)
+                aux2 = "Medio en Sal"
+            end
+            if(aux.value.writesal > 20)
+                aux2 = "Alto en Sal"
+            end
+            cart.push(aux.value.write + "," + " " + aux2)
+            aux = aux.next_
+        end
+        cart.sort
+    end
+    
+end
