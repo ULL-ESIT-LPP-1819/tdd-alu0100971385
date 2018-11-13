@@ -73,7 +73,7 @@ RSpec.describe Nutrientes do
     	@lista.insert_tail(@prueba3)
     	@lista.insert_tail(@prueba4)
     	@lista.insert_tail(@prueba5)
-    	expect(@lista.clasificacion).to eq(["Flan, Bajo en Sal", "Hamburguesa, Alto en Sal", "Helado, Medio en Sal", "Perrito, Alto en Sal", "Pizza, Medio en Sal"])
+    	expect(@lista.clasificacion).to eq(["Flan, poca sal", "Hamburguesa, mucha sal", "Helado, normal de sal", "Perrito, mucha sal", "Pizza, normal de sal"])
     	end
 	end
 	

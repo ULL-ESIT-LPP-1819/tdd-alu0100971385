@@ -60,16 +60,17 @@ class DLL
     def clasificacion
         aux = @head
         aux2 = ""
+        
         cart = Array.new
         while (aux != nil) do
             if (aux.value.writesal <= 4)
-                aux2 = "Bajo en Sal"
+                aux2 = "poca sal"
             end
             if (aux.value.writesal > 4 && aux.value.writesal <= 20)
-                aux2 = "Medio en Sal"
+                aux2 = "normal de sal"
             end
             if(aux.value.writesal > 20)
-                aux2 = "Alto en Sal"
+                aux2 = "mucha sal"
             end
             cart.push(aux.value.write + "," + " " + aux2)
             aux = aux.next_
