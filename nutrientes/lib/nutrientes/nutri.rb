@@ -1,12 +1,12 @@
 class Nutri
     
-    attr_accessor :nombre,:calorias, :grasas, :grasa_saturada, :hidratos_carbono, :azucares, :proteina, :sal, :monoinsaturadas, :poliinsaturadas, :polialcoholes, :almidon, :fibra, :vitaminas, :porciones, :gramos
+    attr_accessor :nombre,:calorias, :grasas, :grasas_saturada, :hidratos_carbono, :azucares, :proteina, :sal, :monoinsaturadas, :poliinsaturadas, :polialcoholes, :almidon, :fibra, :vitaminas, :porciones, :gramos
     
-   def initialize(nombre,calorias,grasas,grasa_saturada,hidratos_carbono,azucares,proteina,sal,monoinsaturadas,poliinsaturadas,polialcoholes,almidon,fibra,vitaminas,porciones,gramos)
+   def initialize(nombre,calorias,grasas,grasas_saturada,hidratos_carbono,azucares,proteina,sal,monoinsaturadas,poliinsaturadas,polialcoholes,almidon,fibra,vitaminas,porciones,gramos)
        self.nombre = nombre
        self.calorias = calorias
        self.grasas = grasas
-       self.grasa_saturada = grasa_saturada
+       self.grasas_saturada = grasas_saturada
        self.hidratos_carbono = hidratos_carbono
        self.azucares = azucares
        self.proteina = proteina
@@ -22,15 +22,15 @@ class Nutri
     end
     
     def calculate_Julios
-       (37*grasas + 37*grasa_saturada + 17*hidratos_carbono + 17*azucares + 17*proteina + 25*sal)*porciones*gramos
+        (37*grasas + 37*grasas_saturada + 17*hidratos_carbono + 17*azucares + 17*proteina + 25*sal)*porciones*gramos
     end
     
     def calculate_Kcal
-       (9*grasas + 9*grasa_saturada + 4*hidratos_carbono + 4*azucares + 4*proteina + 6*sal)*porciones*gramos
+        (9*grasas + 9*grasas_saturada + 4*hidratos_carbono + 4*azucares + 4*proteina + 6*sal)*porciones*gramos
     end
     
     def IR
-       put "8400 kJ/ 2000 kcal, 70g Grasas, 20g Ácidos grasos Saturados, 260g Hidratos de Carbono, 90g Azucares, 50g Proteínas, 6g Sal" 
+        put "8400 kJ/ 2000 kcal, 70g Grasas, 20g Ácidos grasos Saturados, 260g Hidratos de Carbono, 90g Azucares, 50g Proteínas, 6g Sal" 
     end
     
     def write
@@ -38,7 +38,7 @@ class Nutri
     end
     
     def writeCalorias
-       return @calorias
+        return @calorias
     end
     
     def writeGrasas
@@ -46,7 +46,7 @@ class Nutri
     end
     
     def writeGrasasSaturadas
-        return @grasa_saturada
+        return @grasas_saturada
     end
     
     def writeHidratosCarbono
@@ -54,17 +54,15 @@ class Nutri
     end
     
     def writeAzucares
-       return @azucares
+        return @azucares
     end
     
     def writeProteinas
-       return @proteina
+        return @proteina
     end
     
     def writesal
         return @sal
     end 
-    
- 
     
 end
