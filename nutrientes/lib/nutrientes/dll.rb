@@ -47,7 +47,8 @@ class DLL
         string = "("
         aux = @head
         while (aux != nil) do
-            string += "#{aux.value.writesal} gr"
+            string += "#{aux.value.nombre}"
+            #string += "#{aux.value.writesal} gr"
             if(aux.next_ != nil)
                 string += ", "
             end
@@ -63,10 +64,10 @@ class DLL
         
         cart = Array.new
         while (aux != nil) do
-            if (aux.value.writesal <= 4)
+            if (aux.value.writesal <= 8)
                 aux2 = "poca sal"
             end
-            if (aux.value.writesal > 4 && aux.value.writesal <= 20)
+            if (aux.value.writesal > 8 && aux.value.writesal <= 20)
                 aux2 = "normal de sal"
             end
             if(aux.value.writesal > 20)

@@ -2,7 +2,7 @@ require "spec_helper"
 require 'benchmark'
 require "./lib/nutrientes/dll.rb"
 
-RSpec.describe Nutrientes do
+RSpec.describe DLL do
     
 	before :each do
    
@@ -20,7 +20,7 @@ RSpec.describe Nutrientes do
     
 	end
   
-	context "Creando la lista" do
+	context "#Creando la lista" do
 	    it "Existe la lista" do
 	    	expect(@lista).not_to eq(nil)
 	    end
@@ -35,7 +35,7 @@ RSpec.describe Nutrientes do
 	end
   
   
-	context "Métodos de la lista" do
+	context "#Métodos de la lista" do
 	    it "Insertar nodo en head" do
 			@lista.insert_head(@prueba2)
 	    	expect(@lista.get_head).to eq(@prueba2)
@@ -62,11 +62,11 @@ RSpec.describe Nutrientes do
 	    	@lista.insert_tail(@prueba4)
 	    	@lista.insert_tail(@prueba5)
 	    	@lista.insert_tail(@prueba1)
-	    	expect(@lista.to_s).to eq("(25 gr, 21 gr, 3 gr, 18 gr, 9 gr, 25 gr)")
+	    	expect(@lista.to_s).to eq("(Hamburguesa, Perrito, Flan, Pizza, Helado, Hamburguesa)")
 	    end
 	end
   
-	context "Impresión de clasificación de sal" do
+	context "#Impresión de clasificación de sal" do
     	it "Comprobación de clasificación" do
     	
     	@lista.insert_tail(@prueba2)
