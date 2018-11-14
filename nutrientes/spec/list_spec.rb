@@ -56,7 +56,7 @@ RSpec.describe DLL do
 	    	expect(@lista.extract_tail).to eq(@prueba5)
 	    end
 	    
-	    it "Imprimiemto el sal en la cola" do
+	    it "Introduciendo elementos en la lista" do
 	    	@lista.insert_tail(@prueba2)
 	    	@lista.insert_tail(@prueba3)
 	    	@lista.insert_tail(@prueba4)
