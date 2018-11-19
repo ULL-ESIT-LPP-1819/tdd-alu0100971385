@@ -6,7 +6,7 @@ RSpec::Core::RakeTask.new(:spec)
 task :default => :spec
 desc "Archivo de pruebas unitarias"
 task :spec do
-   #sh "rspec -I. spec/nutrientes_spec.rb"
-   #sh "rspec -I. spec/list_spec.rb"
+   sh "rspec -I. spec/nutrientes_spec.rb"
+   sh "rspec -I. spec/list_spec.rb"
    sh "rspec -I. spec/persona_spec.rb"
 end

@@ -79,4 +79,26 @@ class DLL
         cart.sort
     end
     
+    def clasificacionimc
+        aux = @head
+        aux2 = ""
+        
+        cart = Array.new
+        while (aux != nil) do
+            if aux.value.calculate < 18.5 
+                aux.value.valor = 'delgado'
+            else if aux.value.calculate < 24.9 
+                aux.value.valor = 'medio'
+            else 
+                aux.value.valor = 'obeso'
+            end
+            
+            end
+            
+            cart.push(aux.value.write + "," + " " + aux.value.valor)
+            aux = aux.next_
+        end
+        cart.sort
+    end
+    
 end

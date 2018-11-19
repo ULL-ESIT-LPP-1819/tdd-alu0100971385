@@ -1,4 +1,6 @@
 # clase IMC
+
+require "./lib/nutrientes/dll.rb"
 class Paciente
     
     include Comparable
@@ -36,7 +38,7 @@ class Paciente
         if @imc < 18.5 
             @valor = 'flaco'
         else if @imc < 24.9 
-            @valor = 'aceptable'
+            @valor = 'medio'
         else 
             @valor = 'obeso'
         end
@@ -46,13 +48,25 @@ class Paciente
     end
     
     def to_s()
-    	return "Nombre :#{@nombre}, Edad: #{@edad}, Sexo: #{@sexo},  ES: #{@valor}"
+    	return "Nombre :#{@nombre}, Edad: #{@edad}, Sexo: #{@sexo},  Complexión: #{@valor}"
     end
 
     def <=>(comparable)
     	return self.calculate2 <=> comparable.calculate2
     end
-	
+    
+    def writeimc
+        return @imc
+    end
+    
+    def write
+        return @nombre
+        
+    end
+    
+    def writevalue
+        return @valor
+	end
 end
 
 
@@ -68,7 +82,7 @@ class Obeso < Paciente
     end
     
     def to_s()
-        return "Nombre :#{@nombre}, Peso: #{@peso}, Talla: #{@talla}, Edad: #{@edad}, Sexo: #{@sexo} IMC: #{@imc},  ES: #{@valor}"
+        return "Nombre :#{@nombre}, Peso: #{@peso}, Talla: #{@talla}, Edad: #{@edad}, Sexo: #{@sexo} IMC: #{@imc},  Complexión: #{@valor}"
 	end
     
     
@@ -82,6 +96,11 @@ class No_Obeso < Paciente
     def initialize(nombre,peso,talla,edad,sexo, porcentaje,imc,valor)  #constructor
     super(nombre,peso,talla,edad,sexo, porcentaje,imc,valor)
     end
+    
+    def to_s()
+        return "Nombre :#{@nombre}, Edad: #{@edad}, Sexo: #{@sexo},  Complexión: #{@valor}"
+	end
+    
     
 end
 

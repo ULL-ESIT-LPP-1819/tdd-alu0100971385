@@ -346,3 +346,28 @@ RSpec.describe No_Obeso do
 
     	
 end
+
+RSpec.describe DLL do
+    
+    before :each do                 
+    	@persona1 = Obeso.new("Martín",80, 2.50, 25,"Hombre",nil, nil, nil)
+        @persona2 = Obeso.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
+        @persona3 = Obeso.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
+        @persona4 = Obeso.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
+        @persona5 = Obeso.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
+        @lista = DLL.new(@persona1)
+        @lista.insert_tail(@persona2)
+        @lista.insert_tail(@persona3)
+        @lista.insert_tail(@persona4)
+        @lista.insert_tail(@persona5)
+    end
+    
+    describe "#Comprobando lista de humanos" do
+    	it "Clasificación de IMC" do
+    		expect(@lista.clasificacionimc).to eq(["Alejandro, obeso", "Daniel, obeso", "Eduardo, medio", "Lucía, obeso", "Martín, delgado"])
+    		#Jiaqi puto chino de mierda come ratas 
+    	end
+    	
+    end
+    
+end
