@@ -12,7 +12,7 @@ RSpec.describe Paciente do
         @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
     end
     
-    describe "#Pruebas para un Persona Paciente 1: " do
+    describe "#Pruebas para un paciente 1: " do
 		it "Su clase padre es Persona" do
 		    expect(@persona1.class.superclass).to eq(Persona)
 		end
@@ -32,6 +32,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona1.respond_to?(:peso)).to eq(true)
 			expect(@persona1.respond_to?(:talla)).to eq(true)
+			expect(@persona1.respond_to?(:calculate)).to eq(true)
+			expect(@persona1.respond_to?(:calculate2)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -44,7 +46,7 @@ RSpec.describe Paciente do
     
     end
 	
-    describe "#Pruebas para un Persona Paciente 2: " do
+    describe "#Pruebas para un paciente 2: " do
 		it "Su clase padre es Persona" do
 		    expect(@persona2.class.superclass).to eq(Persona)
 		end
@@ -64,6 +66,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona2.respond_to?(:peso)).to eq(true)
 			expect(@persona2.respond_to?(:talla)).to eq(true)
+			expect(@persona2.respond_to?(:calculate)).to eq(true)
+			expect(@persona2.respond_to?(:calculate2)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -77,7 +81,7 @@ RSpec.describe Paciente do
     end
 	
 	
-	describe "#Pruebas para un Persona Paciente 3: " do
+	describe "#Pruebas para un paciente 3: " do
 		it "Su clase padre es Persona" do
 		    expect(@persona3.class.superclass).to eq(Persona)
 		end
@@ -97,6 +101,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona3.respond_to?(:peso)).to eq(true)
 			expect(@persona3.respond_to?(:talla)).to eq(true)
+			expect(@persona3.respond_to?(:calculate)).to eq(true)
+			expect(@persona3.respond_to?(:calculate2)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -110,7 +116,7 @@ RSpec.describe Paciente do
     end
 	
 	
-	describe "#Pruebas para un Persona Paciente 4: " do
+	describe "#Pruebas para un paciente 4: " do
 		it "Su clase padre es Persona" do
 		    expect(@persona4.class.superclass).to eq(Persona)
 		end
@@ -130,6 +136,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona4.respond_to?(:peso)).to eq(true)
 			expect(@persona4.respond_to?(:talla)).to eq(true)
+			expect(@persona4.respond_to?(:calculate)).to eq(true)
+			expect(@persona4.respond_to?(:calculate2)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -143,7 +151,7 @@ RSpec.describe Paciente do
     end
 	
 	
-	describe "#Pruebas para un Persona Paciente 5: " do
+	describe "#Pruebas para un paciente 5: " do
 		it "Su clase padre es Persona" do
 		    expect(@persona5.class.superclass).to eq(Persona)
 		end
@@ -163,6 +171,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona5.respond_to?(:peso)).to eq(true)
 			expect(@persona5.respond_to?(:talla)).to eq(true)
+			expect(@persona5.respond_to?(:calculate)).to eq(true)
+			expect(@persona5.respond_to?(:calculate2)).to eq(true)
 		end
 		    
 		it "Se ha recogido su talla" do
