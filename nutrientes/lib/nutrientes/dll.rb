@@ -58,7 +58,7 @@ class DLL
         return string
     end
     
-    def clasificacion
+    def clasificacionsal
         aux = @head
         aux2 = ""
         
@@ -81,21 +81,20 @@ class DLL
     
     def clasificacionimc
         aux = @head
-        aux2 = ""
         
         cart = Array.new
         while (aux != nil) do
-            if aux.value.calculate < 18.5 
+            if (aux.value.calculateimc < 18.5)
                 aux.value.valor = 'delgado'
-            else if aux.value.calculate < 24.9 
+            end
+            if (aux.value.calculateimc >= 18.5 && aux.value.calculateimc < 24.9)
                 aux.value.valor = 'medio'
-            else 
+            end
+            if (aux.value.calculateimc >= 24.9)
                 aux.value.valor = 'obeso'
             end
             
-            end
-            
-            cart.push(aux.value.write + "," + " " + aux.value.valor)
+            cart.push(aux.value.nombre + "," + " " + aux.value.valor)
             aux = aux.next_
         end
         cart.sort

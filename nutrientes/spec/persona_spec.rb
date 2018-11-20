@@ -1,6 +1,5 @@
 require "spec_helper"
 require 'benchmark'
-require "./lib/nutrientes/persona.rb"
 
 RSpec.describe Paciente do
     
@@ -32,8 +31,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona1.respond_to?(:peso)).to eq(true)
 			expect(@persona1.respond_to?(:talla)).to eq(true)
-			expect(@persona1.respond_to?(:calculate)).to eq(true)
-			expect(@persona1.respond_to?(:calculate2)).to eq(true)
+			expect(@persona1.respond_to?(:calculateimc)).to eq(true)
+			expect(@persona1.respond_to?(:calculateporcentaje)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -66,8 +65,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona2.respond_to?(:peso)).to eq(true)
 			expect(@persona2.respond_to?(:talla)).to eq(true)
-			expect(@persona2.respond_to?(:calculate)).to eq(true)
-			expect(@persona2.respond_to?(:calculate2)).to eq(true)
+			expect(@persona2.respond_to?(:calculateimc)).to eq(true)
+			expect(@persona2.respond_to?(:calculateporcentaje)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -79,7 +78,6 @@ RSpec.describe Paciente do
 		end
     
     end
-	
 	
 	describe "#Pruebas para un paciente 3: " do
 		it "Su clase padre es Persona" do
@@ -101,8 +99,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona3.respond_to?(:peso)).to eq(true)
 			expect(@persona3.respond_to?(:talla)).to eq(true)
-			expect(@persona3.respond_to?(:calculate)).to eq(true)
-			expect(@persona3.respond_to?(:calculate2)).to eq(true)
+			expect(@persona3.respond_to?(:calculateimc)).to eq(true)
+			expect(@persona3.respond_to?(:calculateporcentaje)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -136,8 +134,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona4.respond_to?(:peso)).to eq(true)
 			expect(@persona4.respond_to?(:talla)).to eq(true)
-			expect(@persona4.respond_to?(:calculate)).to eq(true)
-			expect(@persona4.respond_to?(:calculate2)).to eq(true)
+			expect(@persona4.respond_to?(:calculateimc)).to eq(true)
+			expect(@persona4.respond_to?(:calculateporcentaje)).to eq(true)
 		end
 		
 		it "Se ha recogido su talla" do
@@ -171,8 +169,8 @@ RSpec.describe Paciente do
 		it "Su tipo corresponde con el de Paciente" do
 			expect(@persona5.respond_to?(:peso)).to eq(true)
 			expect(@persona5.respond_to?(:talla)).to eq(true)
-			expect(@persona5.respond_to?(:calculate)).to eq(true)
-			expect(@persona5.respond_to?(:calculate2)).to eq(true)
+			expect(@persona5.respond_to?(:calculateimc)).to eq(true)
+			expect(@persona5.respond_to?(:calculateporcentaje)).to eq(true)
 		end
 		    
 		it "Se ha recogido su talla" do

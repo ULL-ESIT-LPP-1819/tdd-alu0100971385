@@ -1,40 +1,27 @@
-# clase IMC
-
 require "./lib/nutrientes/dll.rb"
+
 class Persona
     
-    include Comparable
+    attr_accessor :nombre,:edad,:sexo 
     
-    attr_accessor :nombre,:edad,:sexo  #variables de clase IMC
-    
-    def initialize(nombre,edad,sexo)  #constructor
+    def initialize(nombre,edad,sexo)  
 	@edad = edad
 	@sexo = sexo
 	@nombre = nombre
     end
 
-    
-
-    #calcula el porcentaje de grasa obteniendo sobre datos anteriores.
-    
-    
     def to_s()
-    	return "Nombre :#{@nombre}, Edad: #{@edad}, Sexo: #{@sexo},  Complexión: #{@valor}"
+    	return "Nombre :#{@nombre}, Edad: #{@edad}, Sexo: #{@sexo}"
     end
-
-    def <=>(comparable)
-    	return self.calculate2 <=> comparable.calculate2
-    end
-    
     
 end
 
 
 class Paciente < Persona
     
-    attr_accessor :nombre,:edad,:sexo, :peso, :talla, :porcentaje, :imc, :valor  #variables de clase IMC
+    attr_accessor :nombre,:edad,:sexo, :peso, :talla, :porcentaje, :imc, :valor  
     
-    def initialize(nombre,peso,talla,edad,sexo,porcentaje,imc,valor)  #constructor
+    def initialize(nombre,peso,talla,edad,sexo,porcentaje,imc,valor) 
         super(nombre,edad,sexo)
         @nombre = nombre
         @edad = edad
@@ -46,12 +33,12 @@ class Paciente < Persona
         @valor = valor
     end
     
-    def calculate			#calcula el IMC
+    def calculateimc			
         @imc = peso/(talla*talla)
-        return peso/(talla*talla)
+        return @imc
     end
     
-    def calculate2
+    def calculateporcentaje
             
     	if sexo == "Hombre"
     		
@@ -76,29 +63,7 @@ class Paciente < Persona
     end
     
     def to_s()
-        return "Nombre :#{@nombre}, Peso: #{@peso}, Talla: #{@talla}, Edad: #{@edad}, Sexo: #{@sexo} IMC: #{@imc},  Complexión: #{@valor}"
+        return "Nombre: #{@nombre}, Peso: #{@peso}, Talla: #{@talla}, Edad: #{@edad}, Sexo: #{@sexo}, IMC: #{@imc}, Porcentaje: #{@porcentaje}, Complexión: #{@valor}"
 	end
-	
-	def writeimc
-        return @imc
-    end
-    
-    def write
-        return @nombre
-        
-    end
-    
-    def writevalue
-        return @valor
-	end
-    
     
 end
-
-#si peso y talla != NIL -> Paciente obesa
-#si peso y talla == NIL -> Paciente no obesa
-
-
-
-
-
