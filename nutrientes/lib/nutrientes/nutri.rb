@@ -22,7 +22,11 @@ class Nutri
        self.porciones = porciones
        self.gramos = gramos
     end
-
+    
+    def <=>(other)
+       [self.nombre, self.calorias, self.grasas, self.grasas_saturada, self.hidratos_carbono, self.azucares, self.proteina, self.sal, self.monoinsaturadas, self.poliinsaturadas, self.polialcoholes, self.almidon, self.fibra, self.vitaminas, self.porciones, self.gramos] <=> [other.nombre, other.calorias, other.grasas, other.grasas_saturada, other.hidratos_carbono, other.azucares, other.proteina, other.sal, other.monoinsaturadas, other.poliinsaturadas, other.polialcoholes, other.almidon, other.fibra, other.vitaminas, other.porciones, other.gramos]
+    end
+    
     def calculate_Julios
         (37*grasas + 37*grasas_saturada + 17*hidratos_carbono + 17*azucares + 17*proteina + 25*sal)*porciones*gramos
     end
