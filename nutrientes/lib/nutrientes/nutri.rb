@@ -1,8 +1,10 @@
 class Nutri
     
+    include Comparable
+    
     attr_accessor :nombre,:calorias, :grasas, :grasas_saturada, :hidratos_carbono, :azucares, :proteina, :sal, :monoinsaturadas, :poliinsaturadas, :polialcoholes, :almidon, :fibra, :vitaminas, :porciones, :gramos
     
-   def initialize(nombre,calorias,grasas,grasas_saturada,hidratos_carbono,azucares,proteina,sal,monoinsaturadas,poliinsaturadas,polialcoholes,almidon,fibra,vitaminas,porciones,gramos)
+    def initialize(nombre,calorias,grasas,grasas_saturada,hidratos_carbono,azucares,proteina,sal,monoinsaturadas,poliinsaturadas,polialcoholes,almidon,fibra,vitaminas,porciones,gramos)
        self.nombre = nombre
        self.calorias = calorias
        self.grasas = grasas
@@ -20,7 +22,7 @@ class Nutri
        self.porciones = porciones
        self.gramos = gramos
     end
-    
+
     def calculate_Julios
         (37*grasas + 37*grasas_saturada + 17*hidratos_carbono + 17*azucares + 17*proteina + 25*sal)*porciones*gramos
     end

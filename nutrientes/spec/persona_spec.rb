@@ -9,6 +9,17 @@ RSpec.describe Paciente do
         @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
         @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
         @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
+        
+        @persona1 = Paciente.new("Martín",80, 2.50, 25,"Hombre",nil, nil, nil)
+        @persona2 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
+        @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
+        @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
+        @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
+        @lista = DLL.new(@persona1)
+        @lista.insert_tail(@persona2)
+        @lista.insert_tail(@persona3)
+        @lista.insert_tail(@persona4)
+        @lista.insert_tail(@persona5)
     end
     
     describe "#Pruebas para un paciente 1: " do
@@ -180,33 +191,14 @@ RSpec.describe Paciente do
 		it "Se ha recogido su peso" do
 		    expect(@persona5.peso).not_to eq (nil)
 		end
-    
-    end
-	
+		
+	end
 
-    	
-end
-
-RSpec.describe DLL do
-    
-    before :each do                 
-    	@persona1 = Paciente.new("Martín",80, 2.50, 25,"Hombre",nil, nil, nil)
-        @persona2 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
-        @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
-        @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
-        @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
-        @lista = DLL.new(@persona1)
-        @lista.insert_tail(@persona2)
-        @lista.insert_tail(@persona3)
-        @lista.insert_tail(@persona4)
-        @lista.insert_tail(@persona5)
-    end
-    
-    describe "#Comprobando lista de humanos" do
+	describe "#Comprobando lista de humanos" do
     	it "Clasificación de IMC" do
     		expect(@lista.clasificacionimc).to eq(["Alejandro, obeso", "Daniel, obeso", "Eduardo, medio", "Lucía, obeso", "Martín, delgado"])
     	end
-    	
-    end
+	    	
+	end
     
 end
