@@ -1,6 +1,6 @@
 require "./lib/nutrientes/dll.rb"
 
-class Persona
+class Persona #clase individuo
     
     attr_accessor :nombre,:edad,:sexo 
     
@@ -17,7 +17,7 @@ class Persona
 end
 
 
-class Paciente < Persona
+class Paciente < Persona #clase heredada de persona
     
     include Comparable
     
@@ -35,16 +35,16 @@ class Paciente < Persona
         @valor = calculateporcentaje
     end
     
-    def <=>(other)
+    def <=>(other) #modulo comparable
        [self.nombre, self.peso, self.talla, self.edad, self.sexo, self.porcentaje, self.imc, self.valor] <=> [other.nombre, other.peso, other.talla, other.edad, other.sexo, other.porcentaje, other.imc, other.valor]
     end
     
-    def calculateimc			
+    def calculateimc #indice de masa
         @imc = peso/(talla*talla)
         return @imc
     end
     
-    def calculateporcentaje
+    def calculateporcentaje #porcentaje de grasa
             
     	if sexo == "Hombre"
     		
@@ -68,7 +68,7 @@ class Paciente < Persona
         return porcentaje
     end
     
-    def to_s()
+    def to_s() #to string
         return "Nombre: #{@nombre}, Peso: #{@peso}, Talla: #{@talla}, Edad: #{@edad}, Sexo: #{@sexo}, IMC: #{@imc}, Porcentaje: #{@porcentaje}, Complexión: #{@valor}"
 	end
     
