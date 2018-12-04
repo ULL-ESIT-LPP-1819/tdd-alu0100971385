@@ -4,6 +4,8 @@ class DLL
     
     attr_accessor :head, :tail
     
+    include Enumerable
+    
     def initialize(val)
        @head = Node.new(val,nil,nil)
        @tail = @head
@@ -99,5 +101,14 @@ class DLL
         end
         cart.sort
     end
+    
+    def each(&block)
+        aux = @head
+        while (aux != nil) do
+            yield aux.value;
+            aux = aux.next_
+        end
+    end
+
     
 end

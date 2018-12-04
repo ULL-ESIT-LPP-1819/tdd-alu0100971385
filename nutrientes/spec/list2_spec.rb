@@ -17,28 +17,65 @@ RSpec.describe DLL do
     	@prueba4 = Nutri.new("Pizza",5000,9.5,0.6,5,3.5,0.7,@valor4,4,2.7,1.6,7,2.3,5.3,7,500)
     	@prueba5 = Nutri.new("Helado",1000,5.5,0.5,2,3.5,0.7,@valor5,1.6,2.7,4.8,9,2.3,3.7,2,500)
     	@lista = DLL.new(@prueba1)
+    	@lista.insert_tail(@prueba2)
+    	@lista.insert_tail(@prueba3)
+    	@lista.insert_tail(@prueba4)
+    	@lista.insert_tail(@prueba5)
+    	
+    	@persona1 = Paciente.new("Martín",80, 2.50, 25,"Hombre",nil, nil, nil)
+        @persona2 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
+        @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
+        @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
+        @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
+        @lista2 = DLL.new(@persona1)
+        @lista2.insert_tail(@persona2)
+        @lista2.insert_tail(@persona3)
+        @lista2.insert_tail(@persona4)
+        @lista2.insert_tail(@persona5)
     
 	end
   
-	context "#Pruebas de la lista del modulo enumerable" do
+	context "#Pruebas de la lista del modulo enumerable en la clase Nutrientes" do
 	    it "Máximo valor" do
-	    	expect(@lista.max).to eq(nil)
+	    	expect(@lista.max).to eq(@prueba4)
 	    end
 	    
 	    it "Mínimo valor" do
-	    	expect(@lista.min).to eq(nil)
+	    	expect(@lista.min).to eq(@prueba3)
 	    end
 	    
 	    it "Collect" do
-	    	expect(@lista.collect{nil}).to eq(nil)
+	    	expect(@lista.collect{"vale"}).to eq(["vale", "vale", "vale", "vale", "vale"])
 	    end
 	    
 	    it "Select" do
-	    	expect(@lista.select{|num| num < 5}).to eq(nil)
+	    	expect(@lista.select{|num| num < @prueba5}).to eq([@prueba1,@prueba3])
 	    end
 	    
 	    it "Sort" do
-	    	expect(@lista.sort).to eq(nil)
+	    	expect(@lista.sort).to eq([@prueba3, @prueba1, @prueba5, @prueba2, @prueba4])
+	    end
+	end
+	
+	context "#Pruebas de la lista del modulo enumerable en la clase Persona" do
+	    it "Máximo valor" do
+	    	expect(@lista2.max).to eq(@persona1)
+	    end
+	    
+	    it "Mínimo valor" do
+	    	expect(@lista2.min).to eq(@persona3)
+	    end
+	    
+	    it "Collect" do
+	    	expect(@lista2.collect{"vale"}).to eq(["vale", "vale", "vale", "vale", "vale"])
+	    end
+	    
+	    it "Select" do
+	    	expect(@lista2.select{|num| num < @persona5}).to eq([@persona3,@persona4])
+	    end
+	    
+	    it "Sort" do
+	    	expect(@lista2.sort).to eq([@persona3, @persona4, @persona5, @persona2, @persona1])
 	    end
 	end
 end
