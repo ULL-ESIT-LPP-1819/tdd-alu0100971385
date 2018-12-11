@@ -5,97 +5,97 @@ RSpec.describe Paciente do
     
 	before :each do
    
-    	@prueba1 = Nutri.new("Hamburguesa",5000,9.5,0.6,5,3.5,0.7,25,4,2.7,1.6,7,2.3,5.3,7,500)
-    	@prueba2 = Nutri.new("Perrito",1000,5.5,0.5,2,3.5,0.7,21,1.6,2.7,4.8,9,2.3,3.7,2,500)
-    	@prueba3 = Nutri.new("Flan",1000,5.5,0.5,2,3.5,0.7,3,1.6,2.7,4.8,9,2.3,3.7,2,500)
-    	@prueba4 = Nutri.new("Pizza",5000,9.5,0.6,5,3.5,0.7,18,4,2.7,1.6,7,2.3,5.3,7,500)
-    	@prueba5 = Nutri.new("Helado",1000,5.5,0.5,2,3.5,0.7,9,1.6,2.7,4.8,9,2.3,3.7,2,500)
+    	@prueba1 = Nutri.new("Hamburguesa",1200,2,0.6,1,3.5,0.7,11,4,2.7,1.6,7,2.3,5.3,1,20)
+    	@prueba2 = Nutri.new("Perrito",500,2,0.5,2,3.5,0.7,3,1.6,2.7,4.8,9,2.3,3.7,1,20)
+    	@prueba3 = Nutri.new("Flan",250,2,0.5,2,3.5,0.7,3,1.6,2.7,4.8,2,2.3,3.7,1,20)
+    	@prueba4 = Nutri.new("Pizza",100,2,0.6,5,3.5,0.7,5,4,2.7,1.6,7,2.3,5.3,1,20)
+    	@prueba5 = Nutri.new("Helado",100,1,0.5,2,3.5,0.7,9,1.6,2.7,4.8,9,2.3,3.7,1,20)
     	@menu1 = [@prueba1,@prueba2,@prueba3]
     	@menu2 = [@prueba5,@prueba2,@prueba4]
     	@menu3 = [@prueba2,@prueba4,@prueba2]
-    	@menu4 = [@prueba3,@prueba4,@prueba5]
+    	@menu4 = [@prueba5]
     	@menu5 = [@prueba3,@prueba3,@prueba1]
     	@lista_menu = [@menu1,@menu2,@menu3,@menu4,@menu5]
     	
     	@persona1 = Paciente.new("Martín",80, 2.50, 25,"Hombre",nil, nil, nil)
         @persona2 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
-        @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
-        @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
+        @persona3 = Paciente.new("Alejandro", 75, 1.80, 16, "Hombre", nil, nil, nil)
+        @persona4 = Paciente.new("Daniel", 115, 1.95, 20, "Hombre", nil, nil, nil)
         @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
-        @persona1.addActFisica(0.12)
-        @persona2.addActFisica(0.27)
-        @persona3.addActFisica(0.27)
-        @persona4.addActFisica(0.12)
-        @persona5.addActFisica(0.54)
-        @persona1.addMenu(@menu1)
-        @persona2.addMenu(@menu2)
-        @persona3.addMenu(@menu3)
-        @persona4.addMenu(@menu4)
-        @persona5.addMenu(@menu5)
+        @persona1.setactividad(0.12)
+        @persona2.setactividad(0.27)
+        @persona3.setactividad(0.27)
+        @persona4.setactividad(0.54)
+        @persona5.setactividad(0.54)
+        @persona1.setmenu(@menu1)
+        @persona2.setmenu(@menu2)
+        @persona3.setmenu(@menu3)
+        @persona4.setmenu(@menu4)
+        @persona5.setmenu(@menu5)
         @lista_persona = [@persona1,@persona2,@persona3,@persona4,@persona5]
     
 	end
 	
 	describe "Pruebas para comprobar que la persona tiene definidos los gastos energéticos:" do
 	    it "Comprobar que está definida la actividad física" do
-            expect(@persona1.actFisica).not to eq(nil)
-            expect(@persona2.actFisica).not to eq(nil)
-            expect(@persona3.actFisica).not to eq(nil)
-            expect(@persona4.actFisica).not to eq(nil)
-            expect(@persona5.actFisica).not to eq(nil)
+            expect(@persona1.actividad).not_to eq(nil)
+            expect(@persona2.actividad).not_to eq(nil)
+            expect(@persona3.actividad).not_to eq(nil)
+            expect(@persona4.actividad).not_to eq(nil)
+            expect(@persona5.actividad).not_to eq(nil)
 	    end
 	    it "Comprobar que está definido el gasto basal" do
-            expect(@persona1.getGastoBasal).not to eq(nil)
-            expect(@persona2.getGastoBasal).not to eq(nil)
-            expect(@persona3.getGastoBasal).not to eq(nil)
-            expect(@persona4.getGastoBasal).not to eq(nil)
-            expect(@persona5.getGastoBasal).not to eq(nil)
+            expect(@persona1.getgastobasal).not_to eq(nil)
+            expect(@persona2.getgastobasal).not_to eq(nil)
+            expect(@persona3.getgastobasal).not_to eq(nil)
+            expect(@persona4.getgastobasal).not_to eq(nil)
+            expect(@persona5.getgastobasal).not_to eq(nil)
 	    end
 	    it "Comprobar que está definido el gasto termógeno" do
-            expect(@persona1.getGastoTermogeno).not to eq(nil)
-            expect(@persona2.getGastoTermogeno).not to eq(nil)
-            expect(@persona3.getGastoTermogeno).not to eq(nil)
-            expect(@persona4.getGastoTermogeno).not to eq(nil)
-            expect(@persona5.getGastoTermogeno).not to eq(nil)
+            expect(@persona1.getgastotermogeno).not_to eq(nil)
+            expect(@persona2.getgastotermogeno).not_to eq(nil)
+            expect(@persona3.getgastotermogeno).not_to eq(nil)
+            expect(@persona4.getgastotermogeno).not_to eq(nil)
+            expect(@persona5.getgastotermogeno).not_to eq(nil)
 	    end   
 	    it "Comprobar que está definido el gasto de actividad física" do
-            expect(@persona1.getGastoActividadFisica).not to eq(nil)
-            expect(@persona2.getGastoActividadFisica).not to eq(nil)
-            expect(@persona3.getGastoActividadFisica).not to eq(nil)
-            expect(@persona4.getGastoActividadFisica).not to eq(nil)
-            expect(@persona5.getGastoActividadFisica).not to eq(nil)
+            expect(@persona1.getgastoactividad).not_to eq(nil)
+            expect(@persona2.getgastoactividad).not_to eq(nil)
+            expect(@persona3.getgastoactividad).not_to eq(nil)
+            expect(@persona4.getgastoactividad).not_to eq(nil)
+            expect(@persona5.getgastoactividad).not_to eq(nil)
 	    end
 	    it "Comprobar que está definido el gasto total" do
-            expect(@persona1.getGastoTotal).not to eq(nil)
-            expect(@persona2.getGastoTotal).not to eq(nil)
-            expect(@persona3.getGastoTotal).not to eq(nil)
-            expect(@persona4.getGastoTotal).not to eq(nil)
-            expect(@persona5.getGastoTotal).not to eq(nil)
+            expect(@persona1.getgastototal).not_to eq(nil)
+            expect(@persona2.getgastototal).not_to eq(nil)
+            expect(@persona3.getgastototal).not_to eq(nil)
+            expect(@persona4.getgastototal).not_to eq(nil)
+            expect(@persona5.getgastototal).not_to eq(nil)
 	    end
 	    it "Comprobar que cada persona tiene asignado un menú" do
-            expect(@persona1.menu).not to eq(nil)
-            expect(@persona2.menu).not to eq(nil)
-            expect(@persona3.menu).not to eq(nil)
-            expect(@persona4.menu).not to eq(nil)
-            expect(@persona5.menu).not to eq(nil)
+            expect(@persona1.menu).not_to eq(nil)
+            expect(@persona2.menu).not_to eq(nil)
+            expect(@persona3.menu).not_to eq(nil)
+            expect(@persona4.menu).not_to eq(nil)
+            expect(@persona5.menu).not_to eq(nil)
 	    end
 	end
 	
 	describe "Pruebas para comprobar que el menú es adecuado:" do
 	    it "Comprobar que el menú para la persona 1 es inadecuado" do
-	        expect(@persona1.calculoAlimentacion).to eq("El menú no es adecuado para esta persona")
+	        expect(@persona1.valoracionmenu).to eq("El menú no es adecuado para esta persona")
 	    end
 	    it "Comprobar que el menú para la persona 2 es inadecuado" do
-	        expect(@persona2.calculoAlimentacion).to eq("El menú no es adecuado para esta persona")
+	        expect(@persona2.valoracionmenu).to eq("El menú no es adecuado para esta persona")
 	    end
 	    it "Comprobar que el menú para la persona 3 es inadecuado" do
-	        expect(@persona3.calculoAlimentacion).to eq("El menú no es adecuado para esta persona")
+	        expect(@persona3.valoracionmenu).to eq("El menú no es adecuado para esta persona")
 	    end
 	    it "Comprobar que el menú para la persona 4 es inadecuado" do
-	        expect(@persona4.calculoAlimentacion).to eq("El menú no es adecuado para esta persona")
+	        expect(@persona4.valoracionmenu).to eq("El menú es adecuado para esta persona")
 	    end
 	    it "Comprobar que el menú para la persona 5 es inadecuado" do
-	        expect(@persona5.calculoAlimentacion).to eq("El menú no es adecuado para esta persona")
+	        expect(@persona5.valoracionmenu).to eq("El menú no es adecuado para esta persona")
 	    end
 	end
   

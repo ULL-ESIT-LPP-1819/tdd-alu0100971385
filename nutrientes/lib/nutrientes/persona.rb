@@ -21,7 +21,11 @@ class Paciente < Persona #clase heredada de persona
     
     include Comparable
     
-    attr_accessor :nombre,:edad,:sexo, :peso, :talla, :porcentaje, :imc, :valor  
+    @menu = nil
+    @gastototal = nil
+    @actividad = nil
+    
+    attr_accessor :nombre,:edad,:sexo, :peso, :talla, :porcentaje, :imc, :valor, :menu, :gastototal, :actividad  
     
     def initialize(nombre,peso,talla,edad,sexo,porcentaje,imc,valor) 
         super(nombre,edad,sexo)
@@ -42,6 +46,60 @@ class Paciente < Persona #clase heredada de persona
     def calculateimc #indice de masa
         @imc = peso/(talla*talla)
         return @imc
+    end
+    
+    def setactividad(act)
+        @actividad = act
+    end
+    
+    def setmenu(men)
+        @menu = men
+    end
+    
+    def getgastobasal
+        if sexo == "Mujer"
+           return ((10 * peso) + (6.25 * talla) - (5 * edad) - (161))
+        else
+           return ((10 * peso) + (6.25 * talla) - (5 * edad) + (5))
+        end
+    end
+    
+    def getgastotermogeno
+        return getgastobasal * 0.10
+    end
+    
+    def getgastoactividad
+        return getgastobasal * @actividad
+    end
+    
+    def getgastototal
+        return getgastobasal + getgastotermogeno + getgastoactividad
+    end
+
+    
+    def valoracionmenu
+        @suma = 0
+        @menu.each do |elemento|
+            @suma = @suma + elemento.calculate_Kcal
+            
+            
+        
+        end
+
+        if (@suma >= getgastototal)
+            if (@suma - getgastototal <= getgastototal * 0.10)
+                valoracionfinal = "El menú es adecuado para esta persona"            
+            else
+                valoracionfinal = "El menú no es adecuado para esta persona"
+            end
+        else
+            if getgastototal - @suma <= @suma * 0.10
+                valoracionfinal = "El menú es adecuado para esta persona"
+            else
+                valoracionfinal = "El menú no es adecuado para esta persona"
+            end
+        end
+        return valoracionfinal
     end
     
     def calculateporcentaje #porcentaje de grasa
