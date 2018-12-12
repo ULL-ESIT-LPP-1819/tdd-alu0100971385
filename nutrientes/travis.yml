@@ -1,4 +1,0 @@
-# blocklist
-branches:
-  except:
-  - gh-pages
