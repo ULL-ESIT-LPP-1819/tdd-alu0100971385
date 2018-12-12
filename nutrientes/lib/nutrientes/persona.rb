@@ -81,9 +81,6 @@ class Paciente < Persona #clase heredada de persona
         @suma = 0
         @menu.each do |elemento|
             @suma = @suma + elemento.calculate_Kcal
-            
-            
-        
         end
 
         if (@suma >= getgastototal)

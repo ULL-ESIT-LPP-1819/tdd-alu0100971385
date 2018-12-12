@@ -38,46 +38,40 @@ RSpec.describe Paciente do
 	
 	describe "Pruebas para comprobar que la persona tiene definidos los gastos energéticos:" do
 	    it "Comprobar que está definida la actividad física" do
-            expect(@persona1.actividad).not_to eq(nil)
-            expect(@persona2.actividad).not_to eq(nil)
-            expect(@persona3.actividad).not_to eq(nil)
-            expect(@persona4.actividad).not_to eq(nil)
-            expect(@persona5.actividad).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.actividad).not_to eq(nil)
+            end
+            
 	    end
 	    it "Comprobar que está definido el gasto basal" do
-            expect(@persona1.getgastobasal).not_to eq(nil)
-            expect(@persona2.getgastobasal).not_to eq(nil)
-            expect(@persona3.getgastobasal).not_to eq(nil)
-            expect(@persona4.getgastobasal).not_to eq(nil)
-            expect(@persona5.getgastobasal).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.getgastobasal).not_to eq(nil)
+            end
+            
 	    end
 	    it "Comprobar que está definido el gasto termógeno" do
-            expect(@persona1.getgastotermogeno).not_to eq(nil)
-            expect(@persona2.getgastotermogeno).not_to eq(nil)
-            expect(@persona3.getgastotermogeno).not_to eq(nil)
-            expect(@persona4.getgastotermogeno).not_to eq(nil)
-            expect(@persona5.getgastotermogeno).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.getgastotermogeno).not_to eq(nil)
+            end
+           
 	    end   
 	    it "Comprobar que está definido el gasto de actividad física" do
-            expect(@persona1.getgastoactividad).not_to eq(nil)
-            expect(@persona2.getgastoactividad).not_to eq(nil)
-            expect(@persona3.getgastoactividad).not_to eq(nil)
-            expect(@persona4.getgastoactividad).not_to eq(nil)
-            expect(@persona5.getgastoactividad).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.getgastoactividad).not_to eq(nil)
+            end
+          
 	    end
 	    it "Comprobar que está definido el gasto total" do
-            expect(@persona1.getgastototal).not_to eq(nil)
-            expect(@persona2.getgastototal).not_to eq(nil)
-            expect(@persona3.getgastototal).not_to eq(nil)
-            expect(@persona4.getgastototal).not_to eq(nil)
-            expect(@persona5.getgastototal).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.getgastototal).not_to eq(nil)
+            end
+       
 	    end
 	    it "Comprobar que cada persona tiene asignado un menú" do
-            expect(@persona1.menu).not_to eq(nil)
-            expect(@persona2.menu).not_to eq(nil)
-            expect(@persona3.menu).not_to eq(nil)
-            expect(@persona4.menu).not_to eq(nil)
-            expect(@persona5.menu).not_to eq(nil)
+	        @lista_persona.each do |elemento|
+                expect(elemento.menu).not_to eq(nil)
+            end
+          
 	    end
 	end
 	
@@ -91,7 +85,7 @@ RSpec.describe Paciente do
 	    it "Comprobar que el menú para la persona 3 es inadecuado" do
 	        expect(@persona3.valoracionmenu).to eq("El menú no es adecuado para esta persona")
 	    end
-	    it "Comprobar que el menú para la persona 4 es inadecuado" do
+	    it "Comprobar que el menú para la persona 4 es adecuado" do
 	        expect(@persona4.valoracionmenu).to eq("El menú es adecuado para esta persona")
 	    end
 	    it "Comprobar que el menú para la persona 5 es inadecuado" do
