@@ -1,8 +1,2 @@
 language: ruby
-cache: bundler
-rvm:
-  - 2.4.0
-before_install: gem install bundler -v 1.17.1
-branches:
-  except:
-  - gh-pages
+sudo: false
