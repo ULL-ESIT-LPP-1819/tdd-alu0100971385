@@ -35,7 +35,7 @@ class Nutri
         (9*grasas + 9*grasas_saturada + 4*hidratos_carbono + 4*azucares + 4*proteina + 6*sal)*porciones*gramos
     end
     
-    def IR #indice de referencia
+    def IR
         put "8400 kJ/ 2000 kcal, 70g Grasas, 20g Ácidos grasos Saturados, 260g Hidratos de Carbono, 90g Azucares, 50g Proteínas, 6g Sal" 
     end
     
