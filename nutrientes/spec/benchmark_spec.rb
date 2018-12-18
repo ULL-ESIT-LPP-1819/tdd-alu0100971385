@@ -14,7 +14,7 @@ RSpec.describe Paciente do
     
     @sortedarray = []
     
-    @total_menu = 0.0
+    @auxiliar = 0.0
                 
     @prueba1 = Nutri.new("Hamburguesa",1200,2,0.6,1,3.5,0.7,11,4,2.7,1.6,7,2.3,5.3,1,20)
 	@prueba2 = Nutri.new("Perrito",500,2,0.5,2,3.5,0.7,3,1.6,2.7,4.8,9,2.3,3.7,1,20)
@@ -191,7 +191,7 @@ RSpec.describe Paciente do
     
         def each_array! (array) 
             array.each do
-                total_menu = 0
+                auxiliar = 0
                 array.each_with_index do |el, i|
                     min = i
                     array[1..-1].each_with_index do |el,j|
