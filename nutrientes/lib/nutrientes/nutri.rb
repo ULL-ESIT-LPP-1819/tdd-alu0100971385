@@ -24,7 +24,8 @@ class Nutri
     end
     
     def <=>(other) #modulo comparable
-       [self.nombre, self.calorias, self.grasas, self.grasas_saturada, self.hidratos_carbono, self.azucares, self.proteina, self.sal, self.monoinsaturadas, self.poliinsaturadas, self.polialcoholes, self.almidon, self.fibra, self.vitaminas, self.porciones, self.gramos] <=> [other.nombre, other.calorias, other.grasas, other.grasas_saturada, other.hidratos_carbono, other.azucares, other.proteina, other.sal, other.monoinsaturadas, other.poliinsaturadas, other.polialcoholes, other.almidon, other.fibra, other.vitaminas, other.porciones, other.gramos]
+       #[self.nombre, self.calorias, self.grasas, self.grasas_saturada, self.hidratos_carbono, self.azucares, self.proteina, self.sal, self.monoinsaturadas, self.poliinsaturadas, self.polialcoholes, self.almidon, self.fibra, self.vitaminas, self.porciones, self.gramos] <=> [other.nombre, other.calorias, other.grasas, other.grasas_saturada, other.hidratos_carbono, other.azucares, other.proteina, other.sal, other.monoinsaturadas, other.poliinsaturadas, other.polialcoholes, other.almidon, other.fibra, other.vitaminas, other.porciones, other.gramos]
+       self.calculate_Kcal <=> other.calculate_Kcal
     end
     
     def calculate_Julios #calcular julios

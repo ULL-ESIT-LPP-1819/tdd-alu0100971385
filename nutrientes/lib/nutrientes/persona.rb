@@ -37,10 +37,11 @@ class Paciente < Persona #clase heredada de persona
         @imc = calculateimc
         @porcentaje = calculateporcentaje
         @valor = calculateporcentaje
+        
     end
     
     def <=>(other) #modulo comparable
-       [self.nombre, self.peso, self.talla, self.edad, self.sexo, self.porcentaje, self.imc, self.valor] <=> [other.nombre, other.peso, other.talla, other.edad, other.sexo, other.porcentaje, other.imc, other.valor]
+       self.gastototal <=> other.gastototal
     end
     
     def calculateimc #indice de masa
@@ -50,6 +51,7 @@ class Paciente < Persona #clase heredada de persona
     
     def setactividad(act)
         @actividad = act
+        @gastototal = getgastototal
     end
     
     def setmenu(men)

@@ -7,6 +7,9 @@ RSpec.describe Paciente do
         @persona1 = Paciente.new("Martín",95, 2.50, 25,"Hombre", nil, nil, nil)
         @persona2 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
         @persona3 = Paciente.new("Lucía", 85, 1.70, 20, "Mujer", nil, nil, nil)
+        @persona1.setactividad(0.12)
+		@persona2.setactividad(0.27)
+		@persona3.setactividad(0.27)
     end
     
     describe "#Pruebas para comprobar el modulo comparable en pacientes: " do

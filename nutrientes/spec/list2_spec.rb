@@ -27,6 +27,13 @@ RSpec.describe DLL do
         @persona3 = Paciente.new("Alejandro", 75, 1.20, 16, "Hombre", nil, nil, nil)
         @persona4 = Paciente.new("Daniel", 115, 1.10, 20, "Hombre", nil, nil, nil)
         @persona5 = Paciente.new("Eduardo", 70, 1.78, 14, "Hombre", nil, nil, nil)
+        @persona1.setactividad(0.12)
+		@persona2.setactividad(0.27)
+		@persona3.setactividad(0.27)
+		@persona4.setactividad(0.54)
+		@persona5.setactividad(0.27)
+	
+		
         @lista2 = DLL.new(@persona1)
         @lista2.insert_tail(@persona2)
         @lista2.insert_tail(@persona3)
@@ -37,7 +44,7 @@ RSpec.describe DLL do
   
 	context "#Pruebas de la lista del modulo enumerable en la clase Nutrientes" do
 	    it "Máximo valor" do
-	    	expect(@lista.max).to eq(@prueba4)
+	    	expect(@lista.max).to eq(@prueba1)
 	    end
 	    
 	    it "Mínimo valor" do
@@ -49,21 +56,21 @@ RSpec.describe DLL do
 	    end
 	    
 	    it "Select" do
-	    	expect(@lista.select{|num| num < @prueba5}).to eq([@prueba1,@prueba3])
+	    	expect(@lista.select{|num| num < @prueba5}).to eq([@prueba3])
 	    end
 	    
 	    it "Sort" do
-	    	expect(@lista.sort).to eq([@prueba3, @prueba1, @prueba5, @prueba2, @prueba4])
+	    	expect(@lista.sort).to eq([@prueba3, @prueba5, @prueba2, @prueba4, @prueba1])
 	    end
 	end
 	
 	context "#Pruebas de la lista del modulo enumerable en la clase Persona" do
 	    it "Máximo valor" do
-	    	expect(@lista2.max).to eq(@persona1)
+	    	expect(@lista2.max).to eq(@persona4)
 	    end
 	    
 	    it "Mínimo valor" do
-	    	expect(@lista2.min).to eq(@persona3)
+	    	expect(@lista2.min).to eq(@persona2)
 	    end
 	    
 	    it "Collect" do
@@ -71,11 +78,11 @@ RSpec.describe DLL do
 	    end
 	    
 	    it "Select" do
-	    	expect(@lista2.select{|num| num < @persona5}).to eq([@persona3,@persona4])
+	    	expect(@lista2.select{|num| num < @persona5}).to eq([@persona1,@persona2])
 	    end
 	    
 	    it "Sort" do
-	    	expect(@lista2.sort).to eq([@persona3, @persona4, @persona5, @persona2, @persona1])
+	    	expect(@lista2.sort).to eq([@persona2, @persona1, @persona5, @persona3, @persona4])
 	    end
 	end
 end
