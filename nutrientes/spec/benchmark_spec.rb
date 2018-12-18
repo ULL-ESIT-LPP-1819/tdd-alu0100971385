@@ -12,7 +12,8 @@ RSpec.describe Paciente do
     @dllfor = []
     @dlleach = []
     @dllsort = []
-    
+
+
     @sortedarray = []
     
     @auxiliar = 0.0
