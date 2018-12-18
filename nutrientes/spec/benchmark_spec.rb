@@ -1,5 +1,7 @@
 require "spec_helper"
 require 'benchmark'
+require 'coveralls'
+Coveralls.wear!
 
 RSpec.describe Paciente do
     before :each do
